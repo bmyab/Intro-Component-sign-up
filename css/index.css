@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+  --Blue: hsl(248, 32%, 49%);
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  font-size:1.6rem;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../images/bg-intro-mobile.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-color: var(--Red);
+}
+.main{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  text-align: center;
+  color: white;
+}
+.main .main__intro .title{
+  font-size: 3rem;
+}
+.main .main__intro .paragraph{
+  margin-block: 2rem;
+  margin-inline:1.1rem;
+}
+.main .main__formulario{
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.main .main__formulario .form__intro{
+  background-color: var(--Blue);
+  font-weight: 300;
+  padding: 2rem 5.3rem;
+  border: none;
+  border-radius: 1.2rem;
+  position: relative;
+}
+.main .main__formulario .form__intro::before{
+  content: '';
+  width: 100%;
+  height: 20px;
+  bottom: -8px;
+  border-end-end-radius: 0.8rem;
+  border-end-start-radius: 0.8rem;
+  left: 0;
+  background-color: rgba(231, 16, 16, 0.5);
+  position: absolute;
+  z-index: -1;
+}
+.main .main__formulario .form__intro span{
+  font-weight: 700;
+}
+.main .main__formulario .form{
+  padding: 2rem 2.5rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  position: relative;
+}
+.main .main__formulario .form::before{
+  content: '';
+  width: 100%;
+  height: 20px;
+  bottom: -7px;
+  border-end-end-radius: 0.8rem;
+  border-end-start-radius: 0.8rem;
+  left: 0;
+  background-color: rgba(231, 16, 16, 0.5);
+  position: absolute;
+  z-index: -1;
+}
+.main .main__formulario .form .row{
+  color: var(--Red);
+  position: relative;
+}
+.main .main__formulario .form .row input{
+  width: 100%;
+  padding: 1.8rem 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Grayish-Blue);
+}
+.main .main__formulario .form .row small{
+  font-size: 1.3rem;
+  font-style: italic;
+  opacity: 0;
+}
+.main .main__formulario .form .row img{
+  position: absolute;
+  right: 10%;
+  top: 15%;
+  opacity: 0;
+}
+.main .main__formulario .form .row.error img{
+  opacity: 1;
+}
+.main .main__formulario .form .row input::placeholder{
+  color: var(--Dark-Blue);
+  font-weight: 700;
+}
+.main .main__formulario .form .row input:focus{
+  outline: none;
+  border: 1px solid var(--Red);
+}
+.main .main__formulario .form .form__footer .cta{
+  width: 100%;
+  padding: 1.9rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.8rem;
+  border-bottom: 4px inset green;
+  background-color: var(--Green);
+  margin-block: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition:  opacity 0.2s ease-in;
+}
+.main .main__formulario .form .form__footer .cta:hover{
+  opacity: 0.8;
+}
+.main .main__formulario .form .form__footer .footer__text{
+  color: var(--Grayish-Blue);
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+}
+.main .main__formulario .form .form__footer .footer__text a{
+  color: var(--Red);
+  font-weight: 600;
+  cursor: pointer;
+}
+.main .main__formulario .form .form__footer .footer__text a:hover{
+  text-decoration: underline;
+}
+
+@media screen and (min-width:820px) {
+  body{
+    height: 100vh;
+    background-image: url('../images/bg-intro-desktop.png');
+  }
+  .main{
+    flex-direction: row;
+    max-width: 820px;
+  }
+  .main__intro{
+    width: 50%;
+  }
+ }
+@media screen and (min-width:1024px){
+  .main{
+    gap: 5rem;
+    max-width: 1100px;
+  }
+  .main .main__intro{
+    text-align: left;
+    width: 55%;
+  }
+  .main .main__intro .title{
+    font-size: 4rem;
+  }
+  .main .main__intro .paragraph{
+    margin-inline: 0;
+  }
+  .main .main__formulario{
+    max-width: 52rem;
+  }
+  .main .main__formulario .form__intro{
+    padding: 2rem 2rem;
+  }
+  .main .main__formulario .form{
+    border: 1px solid blue;
+    padding: 2rem 2rem;
+    width: 455px;
+  }
+  .main .main__formulario .form .row{
+    text-align: right;
+  }
+  .main .main__formulario .form .row small{
+    margin-block: 0.25rem;
+  }
+  .main .main__formulario .form .form__footer .footer__text{
+    width: 96%;
+    padding-top: 1rem;
+  }
+ 
